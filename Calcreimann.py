@@ -53,19 +53,18 @@ def ram_analysis(a, b, n, ram_type):
     plt.grid(True)
     st.pyplot(plt.gcf())
 
-st.title("RAM Analysis Tool")
+st.title("RAM Calculator by Skanda")
 st.markdown("""
-Calculates the area under a curve using Riemann Sum approximations (RAM). 
-Choose a method and parameters to analyze the function **f(x) = x² + 4x**.
+Calculates Area of f(x) = x² + 4x**.
 """)
 
 # Input form
 with st.form("RAM Parameters"):
-    a = st.number_input("Start (a)", value=1.0)
-    b = st.number_input("End (b)", value=3.0)
+    a = st.number_input("Initial (a)", value=1.0)
+    b = st.number_input("Final (b)", value=3.0)
     n = st.number_input("Number of Rectangles (n)", min_value=1, value=4)
     ram_type = st.selectbox("RAM Type", ["LRAM", "RRAM", "MRAM", "TRAM"])
-    submitted = st.form_submit_button("Run Analysis")
+    submitted = st.form_submit_button("Run")
 
 if submitted:
     try:
